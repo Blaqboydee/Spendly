@@ -13,6 +13,12 @@ Spendly is a modern expense tracking web application built with React and Tailwi
 
 This project emphasizes UI consistency, dark mode toggle, onboarding experience, and smooth navigation using React Router.
 
+**Spendly also ships as a native Android app**, built from the same codebase with Capacitor — see the [Android App](#-android-app-capacitor) section below.
+
+<p align="center">
+  <img src="./docs/demo.gif" alt="Spendly running on Android" width="300" />
+</p>
+
 ---
 
 ## ✨ Features
@@ -63,12 +69,42 @@ This project emphasizes UI consistency, dark mode toggle, onboarding experience,
 
 ---
 
+## 📱 Android App (Capacitor)
+
+Spendly is packaged as a native Android app using [Capacitor](https://capacitorjs.com/) — one React codebase, deployed to both web and mobile.
+
+**Native features:**
+
+- ✅ Hardware back button – navigates between pages, minimizes from home (like a native app)
+- ✅ Adaptive app icon + branded splash screen (light & dark variants)
+- ✅ Daily expense reminder at 8 PM via scheduled local notifications
+- ✅ Instant warm resume from the recents screen
+
+| Splash | Dashboard | Summary |
+|--------|-----------|---------|
+| ![Splash](./docs/screenshot-splash.png) | ![Dashboard](./docs/screenshot-dashboard.png) | ![Summary](./docs/screenshot-summary.png) |
+
+**📥 Download:** grab `spendly.apk` from the [latest release](https://github.com/Blaqboydee/Finance-Tracker/releases/latest) and install it on any Android device.
+
+**Build it yourself:**
+
+```bash
+npm install
+npm run android:apk      # builds web app, syncs, and assembles the APK
+# output: android/app/build/outputs/apk/debug/spendly.apk
+```
+
+> Requires JDK 21 and the Android SDK.
+
+---
+
 ## 🛠 Tech Stack
 
 - *React* – Frontend framework  
 - *LocalStorage* – Data persistence
 - *React Router DOM* – Client-side routing
 - *Recharts* – Data visualization
+- *Capacitor* – Native Android packaging
 - *Vercel* – Deployment
 - *Tailwind CSS* – Styling   
 
@@ -103,7 +139,7 @@ This project emphasizes UI consistency, dark mode toggle, onboarding experience,
 	•	🔑 User authentication
 	•	☁ Cloud sync for data
 	•	📊 Budget alerts & goals
-	•	📱 Mobile app version
+	•	📱 iOS version & Play Store release
 
 ⸻
 

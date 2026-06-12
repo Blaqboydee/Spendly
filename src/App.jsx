@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from
 import { useState, useEffect } from "react";
 import { App as CapacitorApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
+import { setupNotifications } from "./utils/notifications";
 import Dashboard from "./pages/SplendlyDashboard";
 import Expenses from "./pages/Expenses";
 import ExpenseSummary from "./pages/ExpenseSummary";
@@ -33,6 +34,13 @@ function App() {
       listener.then((l) => l.remove());
     };
   }, [navigate]);
+
+  // Daily expense reminder (native only, after onboarding)
+  useEffect(() => {
+    if (hasOnboarded) {
+      setupNotifications();
+    }
+  }, [hasOnboarded]);
 
   // Dark mode state
   const [isDarkMode, setIsDarkMode] = useState(() => {
