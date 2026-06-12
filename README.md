@@ -84,7 +84,7 @@ Spendly is packaged as a native Android app using [Capacitor](https://capacitorj
 |--------|-----------|---------|
 | ![Splash](./docs/screenshot-splash.png) | ![Dashboard](./docs/screenshot-dashboard.png) | ![Summary](./docs/screenshot-summary.png) |
 
-**📥 Download:** grab `spendly.apk` from the [latest release](https://github.com/Blaqboydee/Finance-Tracker/releases/latest) and install it on any Android device.
+**📥 Download:** grab `spendly.apk` from the [latest release](https://github.com/Blaqboydee/Spendly/releases/latest) and install it on any Android device.
 
 **Build it yourself:**
 
