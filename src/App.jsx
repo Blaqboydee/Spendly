@@ -1,5 +1,7 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { App as CapacitorApp } from "@capacitor/app";
+import { Capacitor } from "@capacitor/core";
 import Dashboard from "./pages/SplendlyDashboard";
 import Expenses from "./pages/Expenses";
 import ExpenseSummary from "./pages/ExpenseSummary";
@@ -11,7 +13,26 @@ import { Sun, Moon } from 'lucide-react';
 
 function App() {
   const location = useLocation()
+  const navigate = useNavigate()
   const hasOnboarded = localStorage.getItem("hasOnboarded") === "true";
+
+  // Android hardware back button: go back through pages, minimize from home
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
+    const listener = CapacitorApp.addListener("backButton", ({ canGoBack }) => {
+      const path = window.location.pathname;
+      if (path === "/" || path === "/dashboard" || !canGoBack) {
+        CapacitorApp.minimizeApp();
+      } else {
+        navigate(-1);
+      }
+    });
+
+    return () => {
+      listener.then((l) => l.remove());
+    };
+  }, [navigate]);
 
   // Dark mode state
   const [isDarkMode, setIsDarkMode] = useState(() => {

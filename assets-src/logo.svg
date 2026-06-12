@@ -1,0 +1,29 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="85" fill="url(#bgGradient)"/>
+  <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+
+  <g transform="translate(100, 100)">
+    <path d="M-8,-45 L-8,-35 M-8,35 L-8,45 M-25,-25 C-25,-35 -18,-40 -8,-40 C2,-40 15,-35 15,-20 C15,-8 5,-3 -8,0 C-21,3 -31,8 -31,20 C-31,35 -18,40 -8,40 C2,40 15,35 25,25"
+          stroke="white"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"/>
+  </g>
+
+  <circle cx="140" cy="60" r="3" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="60" cy="140" r="2" fill="rgba(255,255,255,0.2)"/>
+
+  <g transform="translate(150, 150)" opacity="0.3">
+    <path d="M-10,5 L-5,0 L0,8 L5,-3 L10,2" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="-10" cy="5" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="10" cy="2" r="2" fill="rgba(255,255,255,0.4)"/>
+  </g>
+</svg>
